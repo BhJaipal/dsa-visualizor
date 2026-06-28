@@ -1,77 +1,77 @@
 <script setup>
-useHead({
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  ],
-  link: [
-    { rel: 'icon', href: '/favicon.ico' }
-  ],
-  htmlAttrs: {
-    lang: 'en'
-  }
-})
+import applogo from "/applogo.svg";
 
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
+useHead({
+	meta: [
+		{ name: "viewport", content: "width=device-width, initial-scale=1" },
+	],
+	link: [{ rel: "icon", href: "/favicon.ico" }],
+	htmlAttrs: {
+		lang: "en",
+	},
+});
+
+const title = "Data Structures and Algorithms Visualizer Platform";
+const description =
+	"The DSA Visualizer Platform aims to bridge this gap by providing an interactive environment where users can perform operations, observe execution in real time, analyze complexity, and connect theoretical concepts with practical implementations.";
 
 useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description,
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
-  twitterCard: 'summary_large_image'
-})
+	title,
+	description,
+	ogTitle: title,
+	ogDescription: description,
+	ogImage: applogo,
+	twitterCard: "summary_large_image",
+});
 </script>
 
 <template>
-  <UApp>
-    <UHeader>
-      <template #left>
-        <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
-        </NuxtLink>
+	<UApp>
+		<UHeader>
+			<template #left>
+				<NuxtLink to="/">
+					<AppLogo class="w-auto h-10 shrink-0" />
+				</NuxtLink>
+			</template>
+		</UHeader>
 
-        <TemplateMenu />
-      </template>
+		<NuxtLayout />
 
-      <template #right>
-        <UColorModeButton />
+		<USeparator icon="i-simple-icons-nuxtdotjs" />
 
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
-      </template>
-    </UHeader>
+		<UFooter>
+			<template #left>
+				<p class="text-sm text-muted">
+					Built by BhJaipal • © {{ new Date().getFullYear() }}
+					<UButton
+						to="https://codeberg.org/BhJaipal"
+						target="_blank"
+						icon="i-simple-icons-codeberg"
+						aria-label="GitHub"
+						color="neutral"
+						variant="ghost"
+					/><UButton
+						to="https://github.com/BhJaipal"
+						target="_blank"
+						icon="i-simple-icons-github"
+						aria-label="GitHub"
+						color="neutral"
+						variant="ghost"
+					/>
+				</p>
+			</template>
 
-    <UMain>
-      <NuxtPage />
-    </UMain>
-
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
-
-    <UFooter>
-      <template #left>
-        <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
-        </p>
-      </template>
-
-      <template #right>
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
-      </template>
-    </UFooter>
-  </UApp>
+			<template #right>
+				<UButton
+					to="https://github.com/BhJaipal/dsa-visualizor"
+					target="_blank"
+					label="Source"
+					icon="i-simple-icons-github"
+					aria-label="GitHub"
+					color="neutral"
+					variant="ghost"
+				/>
+			</template>
+		</UFooter>
+	</UApp>
 </template>
