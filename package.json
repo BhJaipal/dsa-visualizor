@@ -1,30 +1,34 @@
 {
   "name": "dsa-visualizor",
+  "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.114",
-    "@iconify-json/simple-icons": "^1.2.86",
-    "@nuxt/ui": "^4.9.0",
-    "nuxt": "^4.4.8",
-    "tailwindcss": "^4.3.1"
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@iconify-json/carbon": "^1.2.23",
-    "@iconify-json/hugeicons": "^1.2.29",
-    "@iconify-json/mdi": "^1.2.3",
-    "@nuxt/eslint": "^1.16.0",
-    "eslint": "^10.5.0",
-    "typescript": "^6.0.3",
-    "vue-tsc": "^3.3.5"
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   },
-  "packageManager": "pnpm@11.8.0"
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ]
 }
