@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
 import { Icon } from "@iconify/react";
 import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -23,7 +23,6 @@ export const metadata: Metadata = {
 	title,
 	description: desc,
 };
-
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -35,20 +34,12 @@ export default function RootLayout({
 			className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
 		>
 			<body className="min-h-full flex flex-col">
-				<header className="w-full bg-[#0e162a] px-10 border-b-slate-800 border-b-2 grid grid-cols-5 py-3">
-					<div></div>
-					<Image
-						alt={title}
-						src="/applogo-dark.svg"
-						height={50}
-						width={100}
-					/>
-				</header>
-				<main className="flex flex-row float-left h-[85vh]">
+				<Header title={title} />
+				<main className="flex flex-row float-left h-[85vh] justify-center mt-20">
 					<Sidebar></Sidebar>
 					{children}
 				</main>
-				<footer className="grid grid-cols-5 py-7">
+				<footer className="grid grid-cols-5 py-4 bg-background border-t-slate-200 dark:border-t-slate-800 border-t-2 text-slate-400">
 					<div></div>
 					<p className="text-muted flex flex-row items-center gap-2">
 						<span>
